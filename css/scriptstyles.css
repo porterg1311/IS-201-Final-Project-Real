@@ -1,0 +1,40 @@
+/* Use atributes such as body to highlight what you want to edit.
+Anything inside will be affected including children of the atribute. */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    background-color: cadetblue;
+ }
+li {
+    font-size: 14px;
+    font-style: italic;
+    font-weight: normal;
+ }
+ a {
+    color: lightgrey;
+    text-decoration: none;
+ }
+a:hover {
+    text-decoration: underline;
+    /* font-weight: bold;
+    font-size: 18px; */
+}
+ .resumeListHeading{
+    font-weight: bold;
+    font-style: normal;
+ }
+ .underline {text-decoration: underline;}
+ .bold {font-weight: bold;}
+ .justify {text-align: justify;}
+ 
+ .homebg {
+    background-image: url('https://external-preview.redd.it/cosmere-star-chart-animated-wallpaper-v0-F7J5vtiCgYgK0nbwWdg8Q8dBKNt0WNrO26lEtrR8baY.png?format=pjpg&auto=webp&s=df1787ca15e43463597b3e344e3d7824c85288ae');
+    background-size: cover;
+    background-repeat: no-repeat;
+ }
+.header {
+   color: antiquewhite;
+}
+.links {
+   color: lightgray;
+}

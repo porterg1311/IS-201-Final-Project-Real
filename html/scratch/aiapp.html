@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Book Suggestion Generator</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      text-align: center;
+      padding: 50px;
+      margin: 0;
+    }
+
+    /* NAV BAR */
+    .navbar {
+      background: #222;
+      padding: 12px;
+      position: sticky;
+      top: 0;
+    }
+
+    .navbar a {
+      color: white;
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+    }
+
+    .navbar a:hover {
+      text-decoration: underline;
+    }
+
+    h1 {
+      color: #333;
+      margin-top: 30px;
+    }
+
+    #result {
+      margin-top: 30px;
+      font-size: 1.2em;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      background: #007BFF;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .tableau-container {
+      margin-top: 60px;
+      display: flex;
+      justify-content: center;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <div class="navbar">
+    <a href="scratch.html">Home</a>
+    <a href="travel.html">Travel</a>
+    <a href="magics.html">Magic</a>
+    <a href="aiapp.html">Suggestor</a>
+    <a href="../../index.html">About Me</a>
+  </div>
+
+  <h1>📚 Book Suggestion Generator</h1>
+
+  <button onclick="suggestBook()">Get a Recommendation</button>
+
+  <div id="result">Click the button to get a book suggestion!</div>
+
+  <!-- Tableau Chart Section -->
+  <div class="tableau-container">
+    <div class='tableauPlaceholder' id='viz1775596382211' style='position: relative'>
+      <noscript>
+        <a href='#'>
+          <img alt='Australians&#39; attitudes to books and the Australian book industry'
+               src='https://public.tableau.com/static/images/Re/Readerssurvey-tableaudashboard/AttitudesDashboard/1_rss.png'
+               style='border: none' />
+        </a>
+      </noscript>
+
+      <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='site_root' value='' />
+        <param name='name' value='Readerssurvey-tableaudashboard/AttitudesDashboard' />
+        <param name='tabs' value='no' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/Re/Readerssurvey-tableaudashboard/AttitudesDashboard/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='en-US' />
+      </object>
+    </div>
+  </div>
+
+  <script type='text/javascript'>
+    function suggestBook() {
+      const books = [
+        {title: "To Kill a Mockingbird", author: "Harper Lee", genre: "Classic Fiction"},
+        {title: "1984", author: "George Orwell", genre: "Dystopian"},
+        {title: "The Hobbit", author: "J.R.R. Tolkien", genre: "Fantasy"},
+        {title: "Dune", author: "Frank Herbert", genre: "Science Fiction"},
+        {title: "Atomic Habits", author: "James Clear", genre: "Self-Help"},
+        {title: "The Shining", author: "Stephen King", genre: "Horror"},
+        {title: "Pride and Prejudice", author: "Jane Austen", genre: "Romance"},
+        {title: "Sapiens", author: "Yuval Noah Harari", genre: "Nonfiction"},
+        {title: "The Road", author: "Cormac McCarthy", genre: "Post-Apocalyptic"}
+      ];
+
+      const randomIndex = Math.floor(Math.random() * books.length);
+      const book = books[randomIndex];
+
+      document.getElementById("result").innerHTML = `
+        <strong>${book.title}</strong><br>
+        by ${book.author}<br>
+        <em>${book.genre}</em>
+      `;
+    }
+  </script>
+
+  <!-- Tableau script -->
+  <script type='text/javascript'>
+    var divElement = document.getElementById('viz1775596382211');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width = '1000px';
+    vizElement.style.height = '727px';
+
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+  </script>
+
+</body>
+</html>
